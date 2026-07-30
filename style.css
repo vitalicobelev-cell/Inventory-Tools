@@ -177,7 +177,59 @@ footer{
 /* =========================================================
    МОБИЛЬНАЯ ВЕРСИЯ
 ========================================================= */
+/* =========================================================
+   РАБОЧАЯ ОБЛАСТЬ
+========================================================= */
 
+#page{
+
+    min-height:70vh;
+
+}
+
+#breadcrumbs{
+
+    color:#8fb7ff;
+
+    font-size:15px;
+
+    margin-bottom:22px;
+
+}
+
+#pageContent{
+
+    min-height:55vh;
+
+}
+
+#backButton{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:#2b3447;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+}
+
+#backButton:active{
+
+    transform:scale(.97);
+
+}
 @media(max-width:420px){
 
     #app{
