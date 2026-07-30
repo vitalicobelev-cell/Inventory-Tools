@@ -51,6 +51,13 @@ function openPage(title){
     </div>
 </header>
 `;
+   const logo = document.getElementById("homeLogo");
+
+if (logo) {
+
+    logo.onclick = goHome;
+
+}
 
 document.getElementById("homeLogo").addEventListener("click", goHome);
 
