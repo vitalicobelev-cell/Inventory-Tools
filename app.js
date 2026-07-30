@@ -19,6 +19,10 @@ const backButton = document.getElementById("backButton");
 
 const menuButtons = document.querySelectorAll(".menuButton");
 
+const header = document.getElementById("header");
+
+header.onclick = goHome;
+
 /* =========================================================
    СЛУЧАЙНАЯ ФРАЗА
 ========================================================= */
@@ -74,8 +78,6 @@ function goHome(){
     page.classList.add("hidden");
 
     menu.style.display = "block";
-
-    breadcrumbs.innerHTML = "";
 
     pageContent.innerHTML = "";
 
