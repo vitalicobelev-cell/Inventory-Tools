@@ -51,13 +51,16 @@ function openPage(title){
     </div>
 </header>
 `;
-   const logo = document.getElementById("homeLogo");
 
-if (logo) {
+const header = document.getElementById("header");
 
-    logo.onclick = goHome;
+if (header) {
+
+    header.onclick = goHome;
 
 }
+
+   
 
 
     switch(title){
