@@ -22,13 +22,13 @@ const SETTINGS = {
 const PUMPS = [
 
     {
-        name: "Без помпы",
-        weight: 0
+        name: "С помпой",
+        weight: SETTINGS.pumpWeight
     },
 
     {
-        name: "С помпой",
-        weight: SETTINGS.pumpWeight
+        name: "Без помпы",
+        weight: 0
     }
 
 ];
