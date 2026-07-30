@@ -242,5 +242,38 @@ function openSyrups() {
         </div>
 
     `;
+   
+updateScreen();
 
+document.getElementById("companyPrev").onclick = function () {
+
+    companyIndex--;
+
+    if (companyIndex < 0) {
+
+        companyIndex = DATA.length - 1;
+
+    }
+
+    bottleIndex = 0;
+
+    updateScreen();
+
+};
+
+document.getElementById("companyNext").onclick = function () {
+
+    companyIndex++;
+
+    if (companyIndex >= DATA.length) {
+
+        companyIndex = 0;
+
+    }
+
+    bottleIndex = 0;
+
+    updateScreen();
+
+};
 }
