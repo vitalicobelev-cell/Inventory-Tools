@@ -41,25 +41,7 @@ function openPage(title){
 
     page.classList.remove("hidden");
 
-    breadcrumbs.innerHTML = `
     
-<header id="pageHeader">
-    <div id="homeLogo">☕</div>
-
-    <div id="title">
-        <h1>Inventory Tools</h1>
-        <span>by Vitali</span>
-    </div>
-</header>
-`;
-
-const header = document.getElementById("pageHeader");
-
-if (header) {
-
-    header.onclick = goHome;
-
-}
 
    
 
