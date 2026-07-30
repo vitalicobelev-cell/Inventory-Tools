@@ -59,7 +59,6 @@ if (logo) {
 
 }
 
-document.getElementById("homeLogo").addEventListener("click", goHome);
 
     switch(title){
 
