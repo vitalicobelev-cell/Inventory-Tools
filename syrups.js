@@ -207,7 +207,7 @@ function openSyrups() {
 
 <div id="syrupApp">
 
-<h2 style="text-align:center;color:#6EB8FF;margin-bottom:25px;">
+<h2 style="text-align:center;color:#6EB8FF;margin-bottom:18px;">
 🧋 Калькулятор сиропов
 </h2>
 
