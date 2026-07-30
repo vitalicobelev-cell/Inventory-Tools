@@ -283,8 +283,6 @@ document.getElementById("companyPrev").onclick = function () {
     updateScreen();
 
 
-   document.getElementById("weight")
-    .addEventListener("input", calculate);
 };
 
 document.getElementById("companyNext").onclick = function () {
@@ -303,6 +301,59 @@ document.getElementById("companyNext").onclick = function () {
 
 };
 
+   function calculate() {
+
+    const weight = document.getElementById("weight");
+
+    const result = document.getElementById("result");
+
+    let text = weight.value.replace(",", ".");
+
+    let kg = parseFloat(text);
+
+    if (weight.value.trim() === "") {
+
+        result.textContent = "0,000";
+
+        return;
+
+    }
+
+    if (isNaN(kg)) {
+
+        result.textContent = "Ошибка";
+
+        return;
+
+    }
+
+    const grams = kg * 1000;
+
+    const minWeight =
+        currentBottle().tare +
+        currentPump().weight;
+
+    if (grams < minWeight) {
+
+        result.textContent = "Ошибка";
+
+        return;
+
+    }
+
+    let volume =
+        (grams -
+         currentBottle().tare -
+         currentPump().weight)
+        / SETTINGS.density;
+
+    result.textContent =
+        volume
+        .toFixed(SETTINGS.decimals)
+        .replace(".", ",");
+
+}
+}
 
 /* =========================================================
    ПЕРЕКЛЮЧЕНИЕ БУТЫЛОК
@@ -369,62 +420,13 @@ document.getElementById("pumpNext").onclick = function () {
     updateScreen();
 
 };
+
+document.getElementById("weight")
+    .addEventListener("input", calculate);
+
+}
 /* =========================================================
    РАСЧЁТ
 ========================================================= */
 
-function calculate() {
 
-    const weight = document.getElementById("weight");
-
-    const result = document.getElementById("result");
-
-    let text = weight.value.replace(",", ".");
-
-    let kg = parseFloat(text);
-
-    if (weight.value.trim() === "") {
-
-        result.textContent = "0,000";
-
-        return;
-
-    }
-
-    if (isNaN(kg)) {
-
-        result.textContent = "Ошибка";
-
-        return;
-
-    }
-
-    const grams = kg * 1000;
-
-    const minWeight =
-        currentBottle().tare +
-        currentPump().weight;
-
-    if (grams < minWeight) {
-
-        result.textContent = "Ошибка";
-
-        return;
-
-    }
-
-    let volume =
-        (grams -
-         currentBottle().tare -
-         currentPump().weight)
-        / SETTINGS.density;
-
-    result.textContent =
-        volume
-        .toFixed(SETTINGS.decimals)
-        .replace(".", ",");
-
-}
-
-   
-}
