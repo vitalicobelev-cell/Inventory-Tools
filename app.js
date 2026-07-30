@@ -36,3 +36,32 @@ window.addEventListener("load", function () {
     }, 2000);
 
 });
+
+
+
+/* =========================================================
+   ПЕРЕХОДЫ МЕНЮ
+========================================================= */
+
+const menuButtons = document.querySelectorAll(".menuButton");
+
+const menu = document.getElementById("menu");
+
+const page = document.getElementById("page");
+
+menuButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        menu.style.display = "none";
+
+        page.classList.remove("hidden");
+
+        page.innerHTML =
+        "<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>"
+        + button.textContent +
+        "</h2>";
+
+    });
+
+});
