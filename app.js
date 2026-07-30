@@ -42,7 +42,8 @@ function openPage(title){
     page.classList.remove("hidden");
 
     breadcrumbs.innerHTML = `
-<header id="header">
+    
+<header id="pageHeader">
     <div id="homeLogo">☕</div>
 
     <div id="title">
@@ -52,7 +53,7 @@ function openPage(title){
 </header>
 `;
 
-const header = document.getElementById("header");
+const header = document.getElementById("pageHeader");
 
 if (header) {
 
