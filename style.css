@@ -203,7 +203,9 @@ footer{
 
 #pageContent{
 
-    min-height:55vh;
+    min-height:auto;
+
+    padding-top:8px;
 
 }
 
