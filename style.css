@@ -229,6 +229,8 @@ footer{
 
     transition:.18s;
 
+   margin-top:20px;
+
 }
 
 #backButton:active{
@@ -449,11 +451,9 @@ footer{
 }
 
 #note{
-
-    min-height:10px;
-
-    margin-bottom:12px;
-
+    min-height:20px;
+    margin-bottom:10px;
+   display:none;
 }
 
 
