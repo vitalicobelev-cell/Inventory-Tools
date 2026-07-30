@@ -408,3 +408,45 @@ footer{
     opacity:0;
 
 }
+
+
+
+
+/* =========================================================
+   КОПИРОВАНИЕ РЕЗУЛЬТАТА
+========================================================= */
+
+#result.copied{
+
+    color:#2ECC71;
+
+}
+
+#copyMark{
+
+    position:absolute;
+
+    right:18px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#2ECC71;
+
+    opacity:0;
+
+    transition:.25s;
+
+}
+
+#copyMark.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
