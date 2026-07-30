@@ -56,7 +56,13 @@ menuButtons.forEach(function(button){
         menu.style.display = "none";
 
         page.classList.remove("hidden");
+document.getElementById("breadcrumbs").textContent =
+"Главная › " + button.textContent;
 
+document.getElementById("pageContent").innerHTML =
+"<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>"
++ button.textContent +
+"</h2>";
       openSyrups();
 
 openTea();
