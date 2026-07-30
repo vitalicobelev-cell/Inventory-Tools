@@ -159,6 +159,25 @@ function updateScreen() {
     document.getElementById("pumpName").textContent =
         currentPump().name;
 
+    document.getElementById("note").textContent =
+        currentCompany().note;
+
+    const prev = document.getElementById("bottlePrev");
+    const next = document.getElementById("bottleNext");
+
+    if (currentCompany().bottles.length === 1) {
+
+        prev.style.visibility = "hidden";
+        next.style.visibility = "hidden";
+
+    } else {
+
+        prev.style.visibility = "visible";
+        next.style.visibility = "visible";
+
+    }
+
+}
 }
 /* =========================================================
    Inventory Tools
