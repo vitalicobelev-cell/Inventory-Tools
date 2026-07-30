@@ -71,4 +71,17 @@ openLiquids();
 
     });
 
+
+   /* =========================================================
+   КНОПКА НАЗАД
+========================================================= */
+
+document.getElementById("backButton").addEventListener("click", function(){
+
+    page.classList.add("hidden");
+
+    menu.style.display = "block";
+
+});
+
 });
