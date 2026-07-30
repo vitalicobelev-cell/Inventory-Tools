@@ -43,10 +43,22 @@ function openPage(title){
 
     breadcrumbs.textContent = "Главная › " + title;
 
-    pageContent.innerHTML =
-        "<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>" +
-        title +
-        "</h2>";
+    switch(title){
+
+        case "🧋 Сиропы":
+
+            openSyrups();
+
+            break;
+
+        default:
+
+            pageContent.innerHTML =
+                "<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>" +
+                title +
+                "</h2>";
+
+    }
 
 }
 
