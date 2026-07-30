@@ -112,19 +112,25 @@ body{
 
     width:100%;
 
-    height:60px;
+    height:64px;
 
     margin-bottom:14px;
 
+    padding:0 20px;
+
     border:none;
 
-    border-radius:16px;
+    border-radius:18px;
 
     background:#2b3447;
 
     color:white;
 
-    font-size:22px;
+    font-size:21px;
+
+    font-weight:600;
+
+    text-align:left;
 
     cursor:pointer;
 
