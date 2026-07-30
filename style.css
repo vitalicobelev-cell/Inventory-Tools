@@ -57,7 +57,7 @@ body{
 
     padding:18px 0;
 
-    margin:0 auto 12px auto;
+   margin:0 auto 18px auto;
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
@@ -292,8 +292,15 @@ footer{
 
 }
 #syrupApp h2{
-    margin-top:0;
-    margin-bottom:14px;
+
+    margin:0 0 18px;
+
+    text-align:center;
+
+    color:#6EB8FF;
+
+    font-size:30px;
+
 }
 
 #syrupApp .selector{
@@ -343,7 +350,11 @@ footer{
     font-weight:600;
 
 }
+#syrupApp .selector:last-of-type{
 
+    margin-bottom:22px;
+
+}
 
 
 .caption{
