@@ -57,10 +57,11 @@ menuButtons.forEach(function(button){
 
         page.classList.remove("hidden");
 
-        page.innerHTML =
-        "<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>"
-        + button.textContent +
-        "</h2>";
+      openSyrups();
+
+openTea();
+
+openLiquids();
 
     });
 
