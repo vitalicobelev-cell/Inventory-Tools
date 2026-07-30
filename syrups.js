@@ -1,88 +1,84 @@
 /* =========================================================
    Inventory Tools
-   syrups.js
+   Syrups Module
 ========================================================= */
 
 function openSyrups() {
 
-    document.getElementById("pageContent").innerHTML = `
+    const pageContent = document.getElementById("pageContent");
 
-<div id="syrupApp">
+    pageContent.innerHTML = `
 
-    <div class="selector">
+        <div id="syrupApp">
 
-        <button id="companyPrev">◀</button>
+            <h2 style="text-align:center;color:#6EB8FF;margin-bottom:25px;">
+                🧋 Калькулятор сиропов
+            </h2>
 
-        <div id="companyName"></div>
+            <div class="selector">
 
-        <button id="companyNext">▶</button>
+                <button id="companyPrev">◀</button>
 
-    </div>
+                <div id="companyName">Monin</div>
 
-    <div class="selector">
+                <button id="companyNext">▶</button>
 
-        <button id="bottlePrev">◀</button>
+            </div>
 
-        <div id="bottleName"></div>
+            <div class="selector">
 
-        <button id="bottleNext">▶</button>
+                <button id="bottlePrev">◀</button>
 
-    </div>
+                <div id="bottleName">Стекло 0.7 л</div>
 
-    <div class="selector">
+                <button id="bottleNext">▶</button>
 
-        <button id="pumpPrev">◀</button>
+            </div>
 
-        <div id="pumpName"></div>
+            <div class="selector">
 
-        <button id="pumpNext">▶</button>
+                <button id="pumpPrev">◀</button>
 
-    </div>
+                <div id="pumpName">Без помпы</div>
 
-    <div id="note"></div>
+                <button id="pumpNext">▶</button>
 
-    <div class="caption">
+            </div>
 
-        Вес (кг)
+            <div id="note"></div>
 
-    </div>
+            <div class="caption">
+                Вес (кг)
+            </div>
 
-    <input
-        id="weight"
-        type="text"
-        inputmode="decimal"
-        autocomplete="off"
-        spellcheck="false"
-        placeholder="">
+            <input
+                id="weight"
+                type="text"
+                inputmode="decimal"
+                placeholder="">
 
-    <div class="caption">
+            <div class="caption">
+                Результат (л)
+            </div>
 
-        Результат (л)
+            <div id="resultBox">
 
-    </div>
+                <div id="result">
 
-    <div id="resultBox">
+                    0,000
 
-        <div id="result">
+                </div>
 
-            0,000
+                <div id="copyMark">
+
+                    ✔
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div id="copyMark">
-
-            ✔
-
-        </div>
-
-    </div>
-
-</div>
-
-`;
-
-    initSyrups();
+    `;
 
 }
-
-
