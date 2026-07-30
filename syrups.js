@@ -158,6 +158,11 @@ function updateScreen() {
 
     document.getElementById("pumpName").textContent =
         currentPump().name;
+   const minWeight =
+    currentBottle().tare + currentPump().weight;
+
+document.getElementById("weight").placeholder =
+    "от " + minWeight + " г";
 
     document.getElementById("note").textContent =
         currentCompany().note;
@@ -328,6 +333,41 @@ document.getElementById("bottleNext").onclick = function () {
     updateScreen();
 
 };
+
+   
+
+   /* =========================================================
+   ПЕРЕКЛЮЧЕНИЕ ПОМПЫ
+========================================================= */
+
+document.getElementById("pumpPrev").onclick = function () {
+
+    pumpIndex--;
+
+    if (pumpIndex < 0) {
+
+        pumpIndex = PUMPS.length - 1;
+
+    }
+
+    updateScreen();
+
+};
+
+document.getElementById("pumpNext").onclick = function () {
+
+    pumpIndex++;
+
+    if (pumpIndex >= PUMPS.length) {
+
+        pumpIndex = 0;
+
+    }
+
+    updateScreen();
+
+};
+
 
    
 }
