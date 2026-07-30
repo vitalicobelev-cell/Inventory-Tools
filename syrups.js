@@ -1,4 +1,9 @@
 /* =========================================================
+   Inventory Tools
+   Syrups Module
+========================================================= */
+
+/* =========================================================
    НАСТРОЙКИ
 ========================================================= */
 
@@ -123,7 +128,7 @@ let bottleIndex = 0;
 let pumpIndex = 0;
 
 /* =========================================================
-   БЫСТРЫЙ ДОСТУП
+   ДОСТУП К ДАННЫМ
 ========================================================= */
 
 function currentCompany() {
@@ -158,17 +163,22 @@ function updateScreen() {
 
     document.getElementById("pumpName").textContent =
         currentPump().name;
-   const minWeight =
-    currentBottle().tare + currentPump().weight;
-
-document.getElementById("weight").placeholder =
-    "от " + minWeight + " г";
 
     document.getElementById("note").textContent =
         currentCompany().note;
 
-    const prev = document.getElementById("bottlePrev");
-    const next = document.getElementById("bottleNext");
+    const minWeight =
+        currentBottle().tare +
+        currentPump().weight;
+
+    document.getElementById("weight").placeholder =
+        "от " + minWeight + " г";
+
+    const prev =
+        document.getElementById("bottlePrev");
+
+    const next =
+        document.getElementById("bottleNext");
 
     if (currentCompany().bottles.length === 1) {
 
@@ -185,136 +195,232 @@ document.getElementById("weight").placeholder =
 }
 
 /* =========================================================
-   Inventory Tools
-   Syrups Module
+   ОТКРЫТЬ КАЛЬКУЛЯТОР
 ========================================================= */
 
 function openSyrups() {
 
-    const pageContent = document.getElementById("pageContent");
+    const pageContent =
+        document.getElementById("pageContent");
 
     pageContent.innerHTML = `
 
-        <div id="syrupApp">
+<div id="syrupApp">
 
-            <h2 style="text-align:center;color:#6EB8FF;margin-bottom:25px;">
-                🧋 Калькулятор сиропов
-            </h2>
+<h2 style="text-align:center;color:#6EB8FF;margin-bottom:25px;">
+🧋 Калькулятор сиропов
+</h2>
 
-            <div class="selector">
+<div class="selector">
 
-                <button id="companyPrev">◀</button>
+<button id="companyPrev">◀</button>
 
-                <div id="companyName">Monin</div>
+<div id="companyName"></div>
 
-                <button id="companyNext">▶</button>
+<button id="companyNext">▶</button>
 
-            </div>
+</div>
 
-            <div class="selector">
+<div class="selector">
 
-                <button id="bottlePrev">◀</button>
+<button id="bottlePrev">◀</button>
 
-                <div id="bottleName">Стекло 0.7 л</div>
+<div id="bottleName"></div>
 
-                <button id="bottleNext">▶</button>
+<button id="bottleNext">▶</button>
 
-            </div>
+</div>
 
-            <div class="selector">
+<div class="selector">
 
-                <button id="pumpPrev">◀</button>
+<button id="pumpPrev">◀</button>
 
-                <div id="pumpName">Без помпы</div>
+<div id="pumpName"></div>
 
-                <button id="pumpNext">▶</button>
+<button id="pumpNext">▶</button>
 
-            </div>
+</div>
 
-            <div id="note"></div>
+<div id="note"></div>
 
-            <div class="caption">
-                Вес (кг)
-            </div>
+<div class="caption">
+Вес (кг)
+</div>
 
-            <input
-                id="weight"
-                type="text"
-                inputmode="decimal"
-                placeholder="">
+<input
+id="weight"
+type="text"
+inputmode="decimal">
 
-            <div class="caption">
-                Результат (л)
-            </div>
+<div class="caption">
+Результат (л)
+</div>
 
-            <div id="resultBox">
+<div id="resultBox">
 
-                <div id="result">
+<div id="result">
+0,000
+</div>
 
-                    0,000
+<div id="copyMark">
+✔
+</div>
 
-                </div>
+</div>
 
-                <div id="copyMark">
+</div>
 
-                    ✔
-
-                </div>
-
-            </div>
-
-        </div>
-    `;
-   
-updateScreen();
-
-document.getElementById("companyPrev").onclick = function () {
-
-    companyIndex--;
-
-    if (companyIndex < 0) {
-
-        companyIndex = DATA.length - 1;
-
-    }
-
-    bottleIndex = 0;
+`;
 
     updateScreen();
 
 
-};
 
-document.getElementById("companyNext").onclick = function () {
+    /* =========================================================
+       ПЕРЕКЛЮЧЕНИЕ ФИРМ
+    ========================================================= */
 
-    companyIndex++;
+    document.getElementById("companyPrev").onclick = function () {
 
-    if (companyIndex >= DATA.length) {
+        companyIndex--;
 
-        companyIndex = 0;
+        if (companyIndex < 0) {
 
-    }
+            companyIndex = DATA.length - 1;
 
-    bottleIndex = 0;
+        }
 
-    updateScreen();
+        bottleIndex = 0;
 
-};
+        updateScreen();
 
-   function calculate() {
+        calculate();
+
+    };
+
+    document.getElementById("companyNext").onclick = function () {
+
+        companyIndex++;
+
+        if (companyIndex >= DATA.length) {
+
+            companyIndex = 0;
+
+        }
+
+        bottleIndex = 0;
+
+        updateScreen();
+
+        calculate();
+
+    };
+
+    /* =========================================================
+       ПЕРЕКЛЮЧЕНИЕ БУТЫЛОК
+    ========================================================= */
+
+    document.getElementById("bottlePrev").onclick = function () {
+
+        bottleIndex--;
+
+        if (bottleIndex < 0) {
+
+            bottleIndex = currentCompany().bottles.length - 1;
+
+        }
+
+        updateScreen();
+
+        calculate();
+
+    };
+
+    document.getElementById("bottleNext").onclick = function () {
+
+        bottleIndex++;
+
+        if (bottleIndex >= currentCompany().bottles.length) {
+
+            bottleIndex = 0;
+
+        }
+
+        updateScreen();
+
+        calculate();
+
+    };
+
+    /* =========================================================
+       ПЕРЕКЛЮЧЕНИЕ ПОМПЫ
+    ========================================================= */
+
+    document.getElementById("pumpPrev").onclick = function () {
+
+        pumpIndex--;
+
+        if (pumpIndex < 0) {
+
+            pumpIndex = PUMPS.length - 1;
+
+        }
+
+        updateScreen();
+
+        calculate();
+
+    };
+
+    document.getElementById("pumpNext").onclick = function () {
+
+        pumpIndex++;
+
+        if (pumpIndex >= PUMPS.length) {
+
+            pumpIndex = 0;
+
+        }
+
+        updateScreen();
+
+        calculate();
+
+    };
+
+    document.getElementById("weight")
+        .addEventListener("input", calculate);
+
+    document.getElementById("weight")
+        .addEventListener("focus", function () {
+
+            this.value = "";
+
+        });
+
+    calculate();
+
+}
+
+
+
+
+
+/* =========================================================
+   РАСЧЁТ
+========================================================= */
+
+function calculate() {
 
     const weight = document.getElementById("weight");
-
     const result = document.getElementById("result");
 
     let text = weight.value.replace(",", ".");
-
     let kg = parseFloat(text);
 
     if (weight.value.trim() === "") {
 
         result.textContent = "0,000";
-
         return;
 
     }
@@ -322,7 +428,6 @@ document.getElementById("companyNext").onclick = function () {
     if (isNaN(kg)) {
 
         result.textContent = "Ошибка";
-
         return;
 
     }
@@ -336,7 +441,6 @@ document.getElementById("companyNext").onclick = function () {
     if (grams < minWeight) {
 
         result.textContent = "Ошибка";
-
         return;
 
     }
@@ -349,84 +453,10 @@ document.getElementById("companyNext").onclick = function () {
 
     result.textContent =
         volume
-        .toFixed(SETTINGS.decimals)
-        .replace(".", ",");
+            .toFixed(SETTINGS.decimals)
+            .replace(".", ",");
 
 }
-}
 
-/* =========================================================
-   ПЕРЕКЛЮЧЕНИЕ БУТЫЛОК
-========================================================= */
-
-document.getElementById("bottlePrev").onclick = function () {
-
-    bottleIndex--;
-
-    if (bottleIndex < 0) {
-
-        bottleIndex = currentCompany().bottles.length - 1;
-
-    }
-
-    updateScreen();
-
-};
-
-document.getElementById("bottleNext").onclick = function () {
-
-    bottleIndex++;
-
-    if (bottleIndex >= currentCompany().bottles.length) {
-
-        bottleIndex = 0;
-
-    }
-
-    updateScreen();
-
-};
-
-   
-
-   /* =========================================================
-   ПЕРЕКЛЮЧЕНИЕ ПОМПЫ
-========================================================= */
-
-document.getElementById("pumpPrev").onclick = function () {
-
-    pumpIndex--;
-
-    if (pumpIndex < 0) {
-
-        pumpIndex = PUMPS.length - 1;
-
-    }
-
-    updateScreen();
-
-};
-
-document.getElementById("pumpNext").onclick = function () {
-
-    pumpIndex++;
-
-    if (pumpIndex >= PUMPS.length) {
-
-        pumpIndex = 0;
-
-    }
-
-    updateScreen();
-
-};
-
-document.getElementById("weight")
-    .addEventListener("input", calculate);
-
-}
-/* =========================================================
-   РАСЧЁТ
-========================================================= */
 
 
