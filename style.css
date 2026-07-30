@@ -65,6 +65,14 @@ body{
     gap:14px;
 
     margin-bottom:28px;
+   cursor:pointer;
+transition:.2s;
+
+}
+
+#header:active{
+
+    transform:scale(.98);
 
 }
 
