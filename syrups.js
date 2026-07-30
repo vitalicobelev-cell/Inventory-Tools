@@ -276,4 +276,39 @@ document.getElementById("companyNext").onclick = function () {
     updateScreen();
 
 };
+
+
+/* =========================================================
+   ПЕРЕКЛЮЧЕНИЕ БУТЫЛОК
+========================================================= */
+
+document.getElementById("bottlePrev").onclick = function () {
+
+    bottleIndex--;
+
+    if (bottleIndex < 0) {
+
+        bottleIndex = currentCompany().bottles.length - 1;
+
+    }
+
+    updateScreen();
+
+};
+
+document.getElementById("bottleNext").onclick = function () {
+
+    bottleIndex++;
+
+    if (bottleIndex >= currentCompany().bottles.length) {
+
+        bottleIndex = 0;
+
+    }
+
+    updateScreen();
+
+};
+
+   
 }
