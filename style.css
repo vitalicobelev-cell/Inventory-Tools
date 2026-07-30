@@ -42,25 +42,12 @@ body{
 
 
 /* =========================================================
-   ЗАСТАВКА
-========================================================= */
-
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-/* =========================================================
    HEADER
 ========================================================= */
 
 #header{
 
     position:relative;
-
-    top:0;
-
-    z-index:1000;
    
 
     display:flex;
@@ -266,6 +253,11 @@ footer{
     transform:scale(.97);
 
 }
+#backButton:hover{
+
+    background:#334057;
+
+}
 @media(max-width:420px){
 
     #app{
@@ -379,6 +371,7 @@ footer{
 text-align:left;
 
 padding-left:20px;
+   margin-bottom:18px;
 
 }
 
@@ -472,17 +465,6 @@ padding-left:20px;
     
    display:none;
 
-    height:28px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#8fb7ff;
-
-    margin-bottom:14px;
 
 }
 
