@@ -89,6 +89,10 @@ function goHome(){
 
     menu.style.display = "block";
 
+    breadcrumbs.innerHTML = "";
+
+    pageContent.innerHTML = "";
+
 }
 
 /* =========================================================
