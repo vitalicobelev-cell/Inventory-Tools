@@ -54,7 +54,7 @@ body{
    HEADER
 ========================================================= */
 
-#header{
+#pageHeader{
 
     display:flex;
 
@@ -65,12 +65,14 @@ body{
     gap:14px;
 
     margin-bottom:28px;
-   cursor:pointer;
-transition:.2s;
+
+    cursor:pointer;
+
+    transition:.2s;
 
 }
 
-#header:active{
+#pageHeader:active{
 
     transform:scale(.98);
 
