@@ -35,58 +35,13 @@ body{
    ОБЩЕЕ
 ========================================================= */
 
-.hidden{
 
-    display:none;
-
-}
 
 /* =========================================================
    ЗАСТАВКА
 ========================================================= */
 
-#splash{
 
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    min-height:100vh;
-
-}
-
-#logo{
-
-    text-align:center;
-
-}
-
-#logo h1{
-
-    margin-top:14px;
-
-    color:#6EB8FF;
-
-    font-size:34px;
-
-}
-
-#logo p{
-
-    margin-top:8px;
-
-    color:#9aa8bd;
-
-    font-size:18px;
-
-}
-
-#logo{
-
-    font-size:70px;
-
-}
 
 /* =========================================================
    HEADER
