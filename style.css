@@ -46,40 +46,62 @@ body{
 /* =========================================================
    HEADER
 ========================================================= */
+/* =========================================================
+   HEADER
+========================================================= */
 
-header{
+#header{
 
-    text-align:center;
+    display:flex;
 
-    margin-bottom:30px;
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    margin-bottom:28px;
 
 }
 
-.logoSmall{
+#homeLogo{
 
     font-size:42px;
 
+    cursor:pointer;
+
+    transition:.2s;
+
 }
 
-header h1{
+#homeLogo:active{
+
+    transform:scale(.92);
+
+}
+
+#title h1{
 
     color:#6EB8FF;
 
-    margin-top:8px;
-
     font-size:30px;
+
+    margin:0;
 
 }
 
-header span{
+#title span{
 
     display:block;
 
-    margin-top:6px;
+    margin-top:4px;
 
     color:#9aa8bd;
 
+    font-size:15px;
+
 }
+
 
 /* =========================================================
    КНОПКИ МЕНЮ
