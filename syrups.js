@@ -264,9 +264,6 @@ function openSyrups() {
             </div>
 
         </div>
-
-document.getElementById("weight")
-    .addEventListener("input", calculate);
     `;
    
 updateScreen();
@@ -285,6 +282,9 @@ document.getElementById("companyPrev").onclick = function () {
 
     updateScreen();
 
+
+   document.getElementById("weight")
+    .addEventListener("input", calculate);
 };
 
 document.getElementById("companyNext").onclick = function () {
