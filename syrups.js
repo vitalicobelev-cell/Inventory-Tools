@@ -7,18 +7,82 @@ function openSyrups() {
 
     document.getElementById("pageContent").innerHTML = `
 
-        <div style="text-align:center;margin-top:40px;">
+<div id="syrupApp">
 
-            <h2 style="color:#6EB8FF;">
-                🧋 Калькулятор сиропов
-            </h2>
+    <div class="selector">
 
-            <p style="margin-top:18px;color:#9aa8bd;">
-                Здесь скоро появится калькулятор.
-            </p>
+        <button id="companyPrev">◀</button>
+
+        <div id="companyName"></div>
+
+        <button id="companyNext">▶</button>
+
+    </div>
+
+    <div class="selector">
+
+        <button id="bottlePrev">◀</button>
+
+        <div id="bottleName"></div>
+
+        <button id="bottleNext">▶</button>
+
+    </div>
+
+    <div class="selector">
+
+        <button id="pumpPrev">◀</button>
+
+        <div id="pumpName"></div>
+
+        <button id="pumpNext">▶</button>
+
+    </div>
+
+    <div id="note"></div>
+
+    <div class="caption">
+
+        Вес (кг)
+
+    </div>
+
+    <input
+        id="weight"
+        type="text"
+        inputmode="decimal"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="">
+
+    <div class="caption">
+
+        Результат (л)
+
+    </div>
+
+    <div id="resultBox">
+
+        <div id="result">
+
+            0,000
 
         </div>
 
-    `;
+        <div id="copyMark">
+
+            ✔
+
+        </div>
+
+    </div>
+
+</div>
+
+`;
+
+    initSyrups();
 
 }
+
+
