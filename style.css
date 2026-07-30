@@ -47,24 +47,21 @@ body{
 
 #header{
 
-    position:relative;
-   
-
     display:flex;
-
+    justify-content:center;
     align-items:center;
 
-    justify-content:center;
+    width:100%;
 
     gap:14px;
 
     padding:18px 0;
 
-    margin-bottom:22px;
-
-    background:#1d2330;
+    margin:0 auto 12px auto;
 
     border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:#1d2330;
 
     cursor:pointer;
 
@@ -90,6 +87,14 @@ body{
 #homeLogo{
 
     font-size:42px;
+
+    width:52px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     user-select:none;
 
@@ -286,6 +291,10 @@ footer{
     width:100%;
 
 }
+#syrupApp h2{
+    margin-top:0;
+    margin-bottom:14px;
+}
 
 #syrupApp .selector{
 
@@ -339,13 +348,15 @@ footer{
 
 .caption{
 
-    font-size:14px;
-
-    color:#9aa8bd;
+    margin-top:18px;
 
     margin-bottom:6px;
 
     margin-left:4px;
+
+    font-size:14px;
+
+    color:#9aa8bd;
 
 }
 
@@ -461,10 +472,14 @@ padding-left:20px;
 }
 
 #note{
-    
-    
-   display:none;
 
+    display:none;
+
+    height:0;
+
+    margin:0;
+
+    padding:0;
 
 }
 
