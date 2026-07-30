@@ -41,7 +41,18 @@ function openPage(title){
 
     page.classList.remove("hidden");
 
-    breadcrumbs.textContent = "Главная › " + title;
+    breadcrumbs.innerHTML = `
+<header id="header">
+    <div id="homeLogo">☕</div>
+
+    <div id="title">
+        <h1>Inventory Tools</h1>
+        <span>by Vitali</span>
+    </div>
+</header>
+`;
+
+document.getElementById("homeLogo").addEventListener("click", goHome);
 
     switch(title){
 
@@ -98,7 +109,7 @@ backButton.addEventListener("click", goHome);
    ЛОГОТИП
 ========================================================= */
 
-document.getElementById("homeLogo").addEventListener("click", goHome);
+
 
 /* =========================================================
    ПЕРВЫЙ ЗАПУСК
