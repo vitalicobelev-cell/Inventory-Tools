@@ -54,6 +54,35 @@ body{
    HEADER
 ========================================================= */
 
+#header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    padding:18px 0;
+
+    margin-bottom:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+   border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+#header:active{
+
+    transform:scale(.98);
+
+    opacity:.9;
+
+}
+
+
 #pageHeader{
 
     display:flex;
@@ -82,9 +111,7 @@ body{
 
     font-size:42px;
 
-    cursor:pointer;
-
-    transition:.2s;
+    user-select:none;
 
 }
 
@@ -195,9 +222,15 @@ footer{
    РАБОЧАЯ ОБЛАСТЬ
 ========================================================= */
 
+#menu{
+
+    margin-top:6px;
+
+}
+
 #page{
 
-    min-height:70vh;
+    margin-top:6px;
 
 }
 
@@ -239,7 +272,7 @@ footer{
 
     transition:.18s;
 
-   margin-top:20px;
+   margin-top:22px;
 
 }
 
