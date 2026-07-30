@@ -455,8 +455,67 @@ function calculate() {
         volume
             .toFixed(SETTINGS.decimals)
             .replace(".", ",");
+result.classList.remove("copied");
+
+const mark = document.getElementById("copyMark");
+
+if (mark) {
+
+    mark.classList.remove("show");
 
 }
+}
+
+
+/* =========================================================
+   КОПИРОВАНИЕ РЕЗУЛЬТАТА
+========================================================= */
+
+document.addEventListener("click", async function (event) {
+
+    if (event.target.id !== "result") return;
+
+    const result = document.getElementById("result");
+
+    if (
+        result.textContent === "Ошибка" ||
+        result.textContent === "0,000"
+    ) {
+        return;
+    }
+
+    try {
+
+        await navigator.clipboard.writeText(result.textContent);
+
+        result.classList.add("copied");
+
+        document
+            .getElementById("copyMark")
+            .classList.add("show");
+
+        setTimeout(function () {
+
+            result.classList.remove("copied");
+
+            document
+                .getElementById("copyMark")
+                .classList.remove("show");
+
+        }, 700);
+
+    }
+
+    catch (e) {
+
+        console.log(e);
+
+    }
+
+});
+
+
+
 
 
 
