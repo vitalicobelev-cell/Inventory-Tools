@@ -183,7 +183,7 @@ document.getElementById("weight").placeholder =
     }
 
 }
-}
+
 /* =========================================================
    Inventory Tools
    Syrups Module
