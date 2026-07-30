@@ -3,85 +3,101 @@
    app.js
 ========================================================= */
 
-const splash = document.getElementById("splash");
+/* =========================================================
+   ЭЛЕМЕНТЫ
+========================================================= */
+
 const menu = document.getElementById("menu");
+const page = document.getElementById("page");
+
 const quote = document.getElementById("quote");
+
+const breadcrumbs = document.getElementById("breadcrumbs");
+const pageContent = document.getElementById("pageContent");
+
+const backButton = document.getElementById("backButton");
+
+const menuButtons = document.querySelectorAll(".menuButton");
 
 /* =========================================================
    СЛУЧАЙНАЯ ФРАЗА
 ========================================================= */
 
-function showRandomQuote() {
+function showRandomQuote(){
 
-    const random =
-        Math.floor(Math.random() * QUOTES.length);
+    const random = Math.floor(Math.random() * QUOTES.length);
 
     quote.textContent = QUOTES[random];
 
 }
 
 /* =========================================================
-   ЗАПУСК
+   ОТКРЫТЬ СТРАНИЦУ
 ========================================================= */
 
-window.addEventListener("load", function () {
+function openPage(title){
 
-    showRandomQuote();
+    menu.style.display = "none";
 
-    setTimeout(function () {
+    page.classList.remove("hidden");
 
-        splash.classList.add("hidden");
-        menu.classList.remove("hidden");
+    breadcrumbs.textContent = "Главная › " + title;
 
-    }, 2000);
+    pageContent.innerHTML =
+        "<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>" +
+        title +
+        "</h2>";
 
-});
-
-
+}
 
 /* =========================================================
-   ПЕРЕХОДЫ МЕНЮ
+   НАЗАД
 ========================================================= */
 
-const menuButtons = document.querySelectorAll(".menuButton");
-
-const menu = document.getElementById("menu");
-
-const page = document.getElementById("page");
-
-menuButtons.forEach(function(button){
-
-    button.addEventListener("click", function(){
-
-        menu.style.display = "none";
-
-        page.classList.remove("hidden");
-document.getElementById("breadcrumbs").textContent =
-"Главная › " + button.textContent;
-
-document.getElementById("pageContent").innerHTML =
-"<h2 style='text-align:center;color:#6EB8FF;margin-top:40px;'>"
-+ button.textContent +
-"</h2>";
-      openSyrups();
-
-openTea();
-
-openLiquids();
-
-    });
-
-
-   /* =========================================================
-   КНОПКА НАЗАД
-========================================================= */
-
-document.getElementById("backButton").addEventListener("click", function(){
+function goHome(){
 
     page.classList.add("hidden");
 
     menu.style.display = "block";
 
+}
+
+/* =========================================================
+   КНОПКИ МЕНЮ
+========================================================= */
+
+menuButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        openPage(button.textContent.trim());
+
+    });
+
 });
+
+/* =========================================================
+   КНОПКА НАЗАД
+========================================================= */
+
+backButton.addEventListener("click", goHome);
+
+/* =========================================================
+   ЛОГОТИП
+========================================================= */
+
+document.getElementById("homeLogo").addEventListener("click", goHome);
+
+/* =========================================================
+   ПЕРВЫЙ ЗАПУСК
+========================================================= */
+
+window.addEventListener("load", function(){
+
+    showRandomQuote();
+
+    page.classList.add("hidden");
+
+    menu.style.display = "block";
 
 });
