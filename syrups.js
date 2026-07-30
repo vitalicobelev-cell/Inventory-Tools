@@ -114,7 +114,52 @@ const DATA = [
 
 ];
 
+/* =========================================================
+   ТЕКУЩИЙ ВЫБОР
+========================================================= */
 
+let companyIndex = 0;
+let bottleIndex = 0;
+let pumpIndex = 0;
+
+/* =========================================================
+   БЫСТРЫЙ ДОСТУП
+========================================================= */
+
+function currentCompany() {
+
+    return DATA[companyIndex];
+
+}
+
+function currentBottle() {
+
+    return currentCompany().bottles[bottleIndex];
+
+}
+
+function currentPump() {
+
+    return PUMPS[pumpIndex];
+
+}
+
+/* =========================================================
+   ОБНОВЛЕНИЕ ЭКРАНА
+========================================================= */
+
+function updateScreen() {
+
+    document.getElementById("companyName").textContent =
+        currentCompany().company;
+
+    document.getElementById("bottleName").textContent =
+        currentBottle().name;
+
+    document.getElementById("pumpName").textContent =
+        currentPump().name;
+
+}
 /* =========================================================
    Inventory Tools
    Syrups Module
