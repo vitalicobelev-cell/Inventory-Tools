@@ -56,11 +56,12 @@ body{
 
 #header{
 
-    position:sticky;
+    position:relative;
 
     top:0;
 
     z-index:1000;
+   
 
     display:flex;
 
@@ -98,29 +99,6 @@ body{
 
 }
 
-#pageHeader{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:14px;
-
-    margin-bottom:28px;
-
-    cursor:pointer;
-
-    transition:.2s;
-
-}
-
-#pageHeader:active{
-
-    transform:scale(.98);
-
-}
 
 #homeLogo{
 
@@ -249,15 +227,7 @@ footer{
 
 }
 
-#breadcrumbs{
 
-    color:#8fb7ff;
-
-    font-size:15px;
-
-    margin-bottom:22px;
-
-}
 
 #pageContent{
 
@@ -373,21 +343,7 @@ footer{
 
 }
 
-#note{
 
-    height:28px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#8fb7ff;
-
-    margin-bottom:14px;
-
-}
 
 .caption{
 
@@ -417,17 +373,20 @@ footer{
 
     color:white;
 
-    font-size:28px;
+    
+   font-size:32px;
 
-    text-align:center;
+text-align:left;
 
-    margin-bottom:18px;
+padding-left:20px;
 
 }
 
 #weight::placeholder{
 
     color:#7f8ca3;
+
+    font-size:22px;
 
 }
 
@@ -451,7 +410,7 @@ footer{
 
 #result{
 
-    font-size:28px;
+    font-size:34px;
 
     font-weight:bold;
 
@@ -509,9 +468,22 @@ footer{
 }
 
 #note{
-    min-height:20px;
-    margin-bottom:10px;
+    
+    
    display:none;
+
+    height:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#8fb7ff;
+
+    margin-bottom:14px;
+
 }
 
 
